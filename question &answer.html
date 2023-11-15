@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<style>
+    #questiondisplay{
+    background: linear-gradient( to bottom, rgba(24, 24, 23, 0.689), rgba(4, 51, 49, 0.986), rgba(42, 43, 43, 0.607)), url(pexels-ann-h-11022636.jpg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 30px;
+    
+    }
+</style>
+<body>
+    <div style="margin: auto;" class=" w-100 mt-5">
+        <div id="questiondisplay" style="border: 2px solid grey; height: 350px; margin: auto; border-radius: 10px; border: none;" class=" w-50"></div>
+        <div style=" margin: auto;" class="w-50 mt-3" id="answersdiv" >
+           
+            <div style="margin: auto;" class="row p1">
+                <button class="col btn btn-sm btn-success m-1" onclick="nextQuest()">Next</button>
+                <button class="col btn btn-sm btn-warning m-1" onclick="preQuest()">Previous</button>
+            </div>
+        </div>
+
+       
+          
+          
+    
+       
+       
+           
+          
+       
+
+    </div>
+
+    <script>
+  let questions = [
+  {
+        question: "What sort of animal is Walt Disney's Dumbo?",
+        answers: [
+            "A. Deer",
+            "B. Elephant",
+            "C. Rabbit",
+            "D. Donkey"
+        ],
+        correctAnswer: "B. Elephant",
+        explanation: "Walt Disney's Dumbo is an elephant."
+
+    },
+
+    {
+        question: "What was the name of the Spanish waiter in the TV sitcom Fawlty Towers?",
+        answers: [
+            "A. Manuel",
+            "B. Pedro",
+            "C. Alfonso",
+            "D. Javier"
+        ],
+        correctAnswer: "A. Manue",
+        Explanation: "In the TV sitcom Fawlty Towers, the name of the Spanish waiter is Manuel."
+    },
+
+    {
+        question: "Which battles took place between the Royal Houses of York and Lancaster?",
+        answers: [
+            "A. Thirty Years War",
+            "B. Hundred Years War",
+            "C. Wars of the Roses",
+            "D. English Civil War"
+        ],
+        correctAnswer: "C. Wars of the Roses",
+        Explanation: "The correct answer is Wars of the Roses. The Wars of the Roses were a series of civil wars fought between the rival royal houses of York and Lancaster in England during the 15th century. The conflict was primarily a power struggle for the English throne, with both houses claiming a legitimate right to rule. The wars ultimately ended with the victory of the Lancastrians and the establishment of the Tudor dynasty under Henry VII"
+    },
+
+    {
+        question: "Which former Beatle narrated the TV adventures of Thomas the Tank Engine?",
+        answers: [
+            "A. John Lennon",
+            "B. Paul McCartney",
+            "C. George Harrison",
+            "D. Ringo Starr"
+        ],
+        correctAnswer: "C. Wars of the Roses",
+        Explanation: "Ringo Starr narrated the TV adventures of Thomas the Tank Engine. Ringo Starr, a former member of The Beatles, lent his voice to the popular children's show, bringing life to the beloved characters and captivating young audiences with his storytelling. His distinctive voice and charm made him the perfect choice for narrating the adventures of Thomas and his friends."
+    },
+    {
+        question: "Queen Anne was the daughter of which English Monarch?",
+        answers: [
+            "A. James II",
+            "B. Henry VIII",
+            "C. Victoria",
+            "D. William I"
+        ],
+        correctAnswer: "A. James II",
+        Explanation: "Queen Anne was the daughter of James II."
+    },
+]
+
+changeQuestion = 0
+let questionDisplay = document.getElementById("questiondisplay")
+questionDisplay.style.color = "white"
+let answersDiv = document.getElementById("answersdiv")
+
+  
+
+questionDisplay.innerHTML = questions[changeQuestion].question
+answersDiv.innerHTML += questions[changeQuestion].answers
+
+
+
+function nextQuest() {
+    questionDisplay.innerHTML = ""
+        for (let index = 0; index < questions.length; index++) {
+            changeQuestion++
+    const element = questions[index].question;
+    questionDisplay.innerHTML += (element.question);
+}
+  if (changeQuestion < questions.length - 1) {
+    changeQuestion++;
+  } else {
+    changeQuestion = 0;
+  }
+}
+
+
+
+
+
+
+// }else {  changeIndex = 0}
+//             document.body.style.backgroundColor = colors [changeIndex]
+//             changeIndex++
+
+
+
+
+
+
+
+//if answr is == correct answer 
+//questionDisplay.innerhtml = ${element.question} Answer is correct
+// else {questionDisplay.innerhtml = ${element.question} Answer is not correct}
+console.log(questions[1]);
+</script>
+</body>
+</html>
